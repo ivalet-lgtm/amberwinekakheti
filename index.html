@@ -3,91 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winery | ქვევრის ღვინო</title>
-    <link rel="icon" type="image/jpg" href="logo.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        body { background-color: #1a0f0f; color: #f4e4bc; font-family: 'Noto Serif Georgian', serif; margin: 0; text-align: center; }
-        .lang-switcher { position: absolute; top: 15px; right: 15px; z-index: 100; }
-        .lang-btn { background: rgba(74, 4, 4, 0.8); color: white; border: 1px solid #f4e4bc; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
-        
-        .top-banner { width: 100%; height: 250px; background-image: url('wine2.jpg'); background-size: cover; background-position: center; border-bottom: 2px solid #4a0404; }
-        .container { padding: 20px; }
-        .wine-card { background: #2d1b1b; padding: 15px; border-radius: 15px; border: 1px solid #630f0f; display: inline-block; max-width: 90%; margin-top: -50px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-        .main-img { width: 100%; border-radius: 10px; border: 1px solid #a52a2a; }
-        
-        .product-title { font-size: 24px; font-weight: bold; margin-top: 15px; color: #ffb347; }
-        .btn { background: #a52a2a; color: white; border: none; padding: 12px 25px; border-radius: 25px; margin-top: 15px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; font-family: inherit; }
-        
-        .location-section { margin-top: 40px; padding: 20px; background: #2d1b1b; border-radius: 15px; border: 1px solid #630f0f; }
-        .loc-btn { background: #2e7d32; color: white; padding: 12px; border-radius: 10px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; margin-top: 10px; }
-        
-        .contact-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; margin: 5px; font-family: inherit; }
-        .phone-btn { background: #4a0404; color: #f4e4bc; border: 1px solid #630f0f; }
-        .whatsapp-btn { background: #25D366; color: white; }
-        
-        .social-footer { margin-top: 30px; padding: 20px; border-top: 1px solid #4a0404; font-size: 14px; opacity: 0.8; }
-        .insta-link { color: #f4e4bc; font-size: 35px; text-decoration: none; display: block; margin-top: 10px; }
-    </style>
+    <title>Amber Wine Kakheti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-
-    <div class="lang-switcher">
-        <button class="lang-btn" onclick="switchLang()">EN / ქარ</button>
-    </div>
-
-    <div class="top-banner"></div>
-
-    <div class="container">
-        <div class="wine-card">
-            <img src="wine1.jpg" class="main-img">
-            <div id="p-title" class="product-title">ქარვისფერი ღვინო</div>
-            <a href="gallery.html" id="g-btn" class="btn">გალერეა</a>
+    <header>
+        <div class="lang-menu" style="text-align:center; padding:10px; background:rgba(0,0,0,0.5);">
+            <a href="index.html" style="color:white; text-decoration:none; margin:0 5px; font-weight:bold;">GE</a> | 
+            <a href="index_en.html" style="color:white; text-decoration:none; margin:0 5px;">EN</a> | 
+            <a href="index_es.html" style="color:white; text-decoration:none; margin:0 5px;">ES</a>
         </div>
-
-        <div class="location-section">
-            <h3 id="loc-title" style="color: #ffb347; margin: 0;">გვეწვიეთ მარანში</h3>
-            <a href="Https://maps.app.goo.gl/2q9UWU2REtHDQWWu5" target="_blank" class="loc-btn">
-                <i class="fas fa-map-marker-alt"></i> <span id="map-text">ნახე რუკაზე</span>
-            </a>
-        </div>
-
-        <div style="margin-top: 30px;">
-            <a href="tel:+995551297171" class="contact-btn phone-btn">
-                <i class="fas fa-phone"></i> +995 551 29 71 71
-            </a>
-            <br>
-            <a href="https://wa.me/995551297171" target="_blank" class="contact-btn whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> <span id="wa-text">WhatsApp</span>
-            </a>
-        </div>
-
-        <div class="social-footer">
-            <p id="footer-text">© 2024 ყველა უფლება დაცულია</p>
-            <a href="https://www.instagram.com/your_account" target="_blank" class="insta-link">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </div>
-
-    <script>
-        let currentLang = 'ka';
-        const content = {
-            ka: { title: "ქარვისფერი ღვინო", gallery: "გალერეა", loc: "გვეწვიეთ მარანში", map: "ნახე რუკაზე", footer: "© 2024 ყველა უფლება დაცულია" },
-            en: { title: "Amber Wine", gallery: "Gallery", loc: "Visit Our Cellar", map: "View on Map", footer: "© 2024 All Rights Reserved" }
-        };
-
-        function switchLang() {
-            currentLang = currentLang === 'ka' ? 'en' : 'ka';
-            document.getElementById('p-title').innerText = content[currentLang].title;
-            document.getElementById('g-btn').innerText = content[currentLang].gallery;
-            document.getElementById('loc-title').innerText = content[currentLang].loc;
-            document.getElementById('map-text').innerText = content[currentLang].map;
-            document.getElementById('footer-text').innerText = content[currentLang].footer;
-            document.body.style.fontFamily = currentLang === 'ka' ? "'Noto Serif Georgian', serif" : "'Playfair Display', serif";
-        }
-    </script>
+        <h1>Amber Wine Kakheti</h1>
+        <p>ტრადიციული ქართული ღვინო ქვევრში</p>
+    </header>
+    <main style="text-align:center; padding:20px;">
+        <img src="wine8.jpg" alt="მარანი" style="width:100%; border-radius:10px; max-width:600px;">
+        <h2>კეთილი იყოს თქვენი მობრძანება</h2>
+        <p>აღმოაჩინეთ კახური ქვევრის ღვინის უნიკალური გემო.</p>
+        <br>
+        <a href="gallery.html" class="btn" style="background:#800000; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">გალერეა</a>
+        <br><br>
+        <section style="background:#f4f4f4; padding:20px; border-radius:10px; color:black;">
+            <h3>კონტაქტი</h3>
+            <p>📍 კახეთი, საქართველო</p>
+            <p>📞 +995 551 29 71 71</p>
+            <a href="https://wa.me/995551297171" style="color:green; font-weight:bold;">WhatsApp</a>
+        </section>
+    </main>
+    <footer style="text-align:center; padding:20px;">
+        <p>© 2024 ყველა უფლება დაცულია</p>
+    </footer>
 </body>
 </html>
