@@ -1,8 +1,9 @@
 self.addEventListener('install', (e) => {
+  self.skipWaiting();
   e.waitUntil(
-    caches.open('winery-store').then((cache) => cache.addAll([
-      './index.html',
-      './logo.jpg'
+    caches.open('winery-v1').then((cache) => cache.addAll([
+      '/amberwinekakheti/index.html',
+      '/amberwinekakheti/logo.jpg'
     ])),
   );
 });
