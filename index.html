@@ -15,6 +15,7 @@
     <title>Winery | ქვევრის ღვინო</title>
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/jpg" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -25,18 +26,17 @@
             margin: 0; 
             text-align: center; 
         }
-        /* კონტეინერი კომპიუტერისთვის */
         .container { 
             padding: 20px; 
-            max-width: 600px; /* ზღუდავს სიგანეს დიდ ეკრანზე */
-            margin: 0 auto;   /* აცენტრებს კონტეინერს */
+            max-width: 600px; 
+            margin: 0 auto;
         }
         .lang-switcher { position: absolute; top: 15px; right: 15px; z-index: 100; }
         .lang-btn { background: rgba(74, 4, 4, 0.8); color: white; border: 1px solid #f4e4bc; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
         
         .top-banner { 
             width: 100%; 
-            height: 350px; /* ცოტა ავუწიოთ სიმაღლე */
+            height: 350px; 
             background-image: url('wine2.jpg'); 
             background-size: cover; 
             background-position: center; 
@@ -49,12 +49,12 @@
             border-radius: 15px; 
             border: 1px solid #630f0f; 
             display: block; 
-            margin-top: -80px; /* ბარათი უფრო მეტად ავწიოთ ბანერზე */
+            margin-top: -80px; 
             box-shadow: 0 15px 30px rgba(0,0,0,0.7); 
         }
 
         .main-img { width: 100%; border-radius: 10px; border: 1px solid #a52a2a; transition: 0.3s; }
-        .main-img:hover { transform: scale(1.02); } /* მცირე ეფექტი კომპიუტერზე */
+        .main-img:hover { transform: scale(1.02); }
 
         .product-title { font-size: 28px; font-weight: bold; margin-top: 15px; color: #ffb347; }
         .btn { background: #a52a2a; color: white; border: none; padding: 12px 35px; border-radius: 25px; margin-top: 15px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; font-family: inherit; transition: 0.3s; }
@@ -71,10 +71,32 @@
         .whatsapp-btn { background: #25D366; color: white; }
         
         .social-footer { margin-top: 50px; padding: 30px; border-top: 1px solid #4a0404; font-size: 14px; opacity: 0.9; }
-        .insta-link { color: #f4e4bc; font-size: 40px; text-decoration: none; display: inline-block; margin-top: 15px; transition: 0.3s; }
-        .insta-link:hover { color: #ffb347; transform: rotate(5deg); }
 
-        /* Media Query დიდი ეკრანებისთვის (Laptops/Desktops) */
+        /* ახალი ინსტაგრამის სტილები */
+        .insta-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            max-width: 280px;
+            margin: 20px auto;
+        }
+        .insta-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
+        }
+        .insta-box i {
+            font-size: 28px;
+        }
+
         @media (min-width: 768px) {
             .top-banner { height: 450px; }
             .product-title { font-size: 36px; }
@@ -108,20 +130,19 @@
                 <i class="fab fa-whatsapp"></i> <span id="wa-text">WhatsApp</span>
             </a>
         </div>
-       <div class="social-footer">
-    <p id="footer-text" style="margin-bottom: 20px;">© 2024 ყველა უფლება დაცულია</p>
-    
-    <a href="https://www.instagram.com/amberwinekakheti" target="_blank" class="insta-box">
-        <i class="fab fa-instagram"></i>
-        <span id="insta-text">გვეწვიეთ ინსტაგრამზე</span>
-    </a>
-</div>
+        <div class="social-footer">
+            <p id="footer-text">© 2024 ყველა უფლება დაცულია</p>
+            <a href="https://www.instagram.com/amberwinekakheti" target="_blank" class="insta-box">
+                <i class="fab fa-instagram"></i>
+                <span id="insta-text">გვეწვიეთ ინსტაგრამზე</span>
+            </a>
+        </div>
     </div>
     <script>
         let currentLang = 'ka';
         const content = {
-            ka: { title: "ქარვისფერი ღვინო", gallery: "გალერეა", loc: "გვეწვიეთ მარანში", map: "ნახე რუკაზე", footer: "© 2024 ყველა უფლება დაცულია" },
-            en: { title: "Amber Wine", gallery: "Gallery", loc: "Visit Our Cellar", map: "View on Map", footer: "© 2024 All Rights Reserved" }
+            ka: { title: "ქარვისფერი ღვინო", gallery: "გალერეა", loc: "გვეწვიეთ მარანში", map: "ნახე რუკაზე", footer: "© 2024 ყველა უფლება დაცულია", insta: "გვეწვიეთ ინსტაგრამზე" },
+            en: { title: "Amber Wine", gallery: "Gallery", loc: "Visit Our Cellar", map: "View on Map", footer: "© 2024 All Rights Reserved", insta: "Follow us on Instagram" }
         };
         function switchLang() {
             currentLang = currentLang === 'ka' ? 'en' : 'ka';
@@ -130,6 +151,7 @@
             document.getElementById('loc-title').innerText = content[currentLang].loc;
             document.getElementById('map-text').innerText = content[currentLang].map;
             document.getElementById('footer-text').innerText = content[currentLang].footer;
+            document.getElementById('insta-text').innerText = content[currentLang].insta;
             document.body.style.fontFamily = currentLang === 'ka' ? "'Noto Serif Georgian', serif" : "'Playfair Display', serif";
         }
     </script>
